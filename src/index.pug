@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title Hello Pug
+        link(rel="stylesheet" href="css/app.css")
+
+    body
+        div(class="container")
+            each row, rowIndex in Array(5)
+                each val, valIndex in Array(50)
+                    div(class="dot" id='r' + rowIndex + '-i' + valIndex)
+        input(type="text", hidden maxlength="10" value="  Vue js!")
+        script(src='js/app.js')

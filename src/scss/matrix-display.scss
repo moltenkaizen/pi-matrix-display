@@ -1,0 +1,64 @@
+$dot-size: 15px;
+$primary-color: #00ff00;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: black;
+  box-sizing: inherit;
+}
+
+.container {
+  min-width: 750px;
+  //border: 1px solid red;
+  //min-width: ($dot-size * 54) + 220px;
+  width: 750px;
+  //width: ($dot-size * 54) + 220px;
+}
+
+.dot {
+  box-sizing: border-box;
+  // border: 1px solid #222;
+  width: $dot-size;
+  height: $dot-size;
+  display: inline-block;
+  color: white;
+  font-size: 10px;
+  background: #222;
+  border-radius: 50%;
+
+  &.active {
+    background: $primary-color;
+    box-shadow: 0 0 20px 12px rgba($primary-color, 0.25);
+    // animation: flicker 100ms infinite;
+  }
+}
+
+input {
+  margin-top: 1em;
+  padding: .5em;
+  background: #222;
+  font-size: 1.2em;
+  color: $primary-color;
+  border: none;
+  outline: 1px solid transparent;
+  transition: outline 300ms;
+
+  &:focus {
+    outline: 1px solid $primary-color;
+  }
+}
+
+@keyframes flicker {
+  to {
+    box-shadow: 0 0 100px 10px rgba($primary-color, 0.1);
+  }
+}
